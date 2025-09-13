@@ -12,12 +12,15 @@ public class PlayerController : PhysicsObject
     float xAdjustment = 0f;
     int lives;
     public Text livesText;
+    int rounds_completed = 0;
+    public Text pointsText;
 
     public Vector3 starting_position;
     void Start()
     {
         lives = 3;
         starting_position = new Vector3(-7, 21, 0);
+        transform.position = starting_position;
     }
     // Update is called once per frame
     void Update()
@@ -42,10 +45,27 @@ public class PlayerController : PhysicsObject
             transform.position = starting_position;
             lives -= 1;
             livesText.text = lives.ToString();
+            if (lives < 0)
+            {
+                lives = 3;
+                rounds_completed = 0;
+                starting_position = new Vector3(-7, 21, 0);
+                transform.position = starting_position;
+                livesText.text = lives.ToString();
+                pointsText.text = rounds_completed.ToString();
+                Debug.Log("Restarting Game");
+            }
         }
         if (other.CompareTag("Victory"))
         {
-            Debug.Log("Victory!");
+            starting_position -= new Vector3(0, 110, 0);
+            transform.position = starting_position;
+            rounds_completed += 1;
+            pointsText.text = rounds_completed.ToString();
+            if (rounds_completed == 3)
+            {
+                Debug.Log("You Win!");
+            }
         }
     }
     override
