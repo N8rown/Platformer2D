@@ -17,7 +17,7 @@ public class PhysicsObject : MonoBehaviour
     {
         if (move.magnitude < 0.00001f) return;
         RaycastHit2D[] results = new RaycastHit2D[16];
-        int cnt = GetComponent<Rigidbody2D>().Cast(move, results, move.magnitude + 0.05f);
+        int cnt = GetComponent<Rigidbody2D>().Cast(move, results, move.magnitude + 0.02f);
         if (cnt > 0)
         {
             for (int i = 0; i < cnt; ++i)
