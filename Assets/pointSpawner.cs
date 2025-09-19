@@ -8,18 +8,27 @@ public class pointSpawner : MonoBehaviour
     public GameObject pointPrefab;
     public float spawnInterval = 5f;
     private float timer;
+    public float xLeft = -18f;
+    public float xRight = 45f;
+    void SpawnPoint()
+    {
+        float randomX = Random.Range(xLeft, xRight);
+        Vector3 spawnPosition = new Vector3(randomX, 30f, 0f);
+        Instantiate(pointPrefab, spawnPosition, Quaternion.identity);
+    }
 
-    // Start is called before the first frame update
+    IEnumerator SpawnRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnInterval);
+            SpawnPoint();
+        }
+    }
     void Start()
     {
-        timer = 0f;
-        GameObject duplicate = Instantiate(pointPrefab);
-        InvokeRepeating("SpawnPoint", 2f, spawnInterval);
+        SpawnPoint();
+        StartCoroutine(SpawnRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

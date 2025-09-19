@@ -48,12 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6679006607551300046, guid: 0e1599c14ed54d148b8f6fb42a9c57ea, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6541592
+      objectReference: {fileID: 0}
     - target: {fileID: 7464199664575639053, guid: 0e1599c14ed54d148b8f6fb42a9c57ea, type: 3}
       propertyPath: m_Name
       value: PointRain Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2851545206893756838, guid: 0e1599c14ed54d148b8f6fb42a9c57ea, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7464199664575639053, guid: 0e1599c14ed54d148b8f6fb42a9c57ea, type: 3}

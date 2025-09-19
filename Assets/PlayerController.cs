@@ -39,6 +39,10 @@ public class PlayerController : PhysicsObject
             velocity.y = jumpHeight;
         if (onMovingPlatform)
             desiredx += 1f * xAdjustment;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = starting_position; // Reset position to starting position
+        }
     }
     override
     public void CollideWith(Collider2D other)
