@@ -6,6 +6,7 @@ TagManager:
   tags:
   - moving
   - Victory
+  - Points
   layers:
   - Default
   - TransparentFX

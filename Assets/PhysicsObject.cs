@@ -10,7 +10,7 @@ public class PhysicsObject : MonoBehaviour
     protected bool isGrounded;
     public float desiredx;
 
-  
+
 
 
     public void Movement(Vector2 move, bool movex)
